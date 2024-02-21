@@ -1,10 +1,12 @@
-import { fetchWorksData, fetchCategoriesData} from './api.js';
-import { tokenLogin } from './connected.js';
 import {gallery, filtersElement} from './constants.js';
-import { displayWorksInPanel } from './editMode.js';
 
 
-// Génère les cartes des travaux sur l'index
+fetch("http://localhost:5678/api/works")
+.then(response=>response.json())
+.then(data=>{
+  console.log(data)
+})
+  // Génère les cartes des travaux sur l'index
 function displayWorkCards(works) {
   gallery.innerHTML = '';
   
@@ -27,6 +29,17 @@ function displayWorkCards(works) {
     figure.appendChild(figcaption);   // Génération de la balise figcaption à la figure
   }) 
 }
+//Appel les catégories liés aux travaux
+export async function fetchCategoriesData() {
+  try {
+      const url = 'http://localhost:5678/api/categories';
+      const response = await fetch(url);
+
+      return await response.json();
+  } catch (error) {
+      console.log('===> error', error);
+  }
+}
 
 // Génere les filtres en fonction de leurs categories au chargement
   function displayWorkFilters(categories, parent) {
@@ -39,11 +52,25 @@ function displayWorkCards(works) {
       parent.appendChild(div);
     });
   }
+// Appel les données des travaux
+export async function fetchWorksData() {
+  try {
+      const url = 'http://localhost:5678/api/works';
+      const response = await fetch(url);
+
+      return await response.json();
+  } catch (error) {
+      console.log('===> error', error);
+  }
+}
+
+
+
 
 // Gére principalement les filtres, l'affichage des travaux et modifie le style lors du clic
   export async function main() {
     // Vérifie si connecté
-    tokenLogin();
+    // tokenLogin();
 
     // Récupére les données des travaux et des catégories depuis le serveur, et afficher les cartes de travail et les filtres
     const works = await fetchWorksData();

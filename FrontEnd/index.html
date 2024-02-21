@@ -7,22 +7,21 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+	
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-	<!-- Gère les 2 menus de suppression et d'ajout de travaux -->
+	<!-- Gestion des 2 menus suppression&ajout travaux -->
 	<div id="pannelConnection" class="disconnected_and_hidden">
 		<div class="open-edit edition">
 			<i class="open-edit fa-regular fa-pen-to-square"></i>
 			<span class="open-edit edition-mode"> Mode édition</span>			
 		</div>
 	</div>
-	<!-- menu de suppresion des travaux -->
+	<!-- menu Suppression travaux -->
 	<div id="pannelEditWork" class="hidden">
-		<!-- Affiche la Galerie miniaturisé pour la suppression ou l'ajout de travaux -->
+		<!-- Affichage Galerie miniaturisée pour supp/add travaux -->
 		<div id="galeriEditWork">
 			<div class="cross"><i class="fa-solid fa-xmark"></i></div>
 			<h2>Galerie photo</h2>
@@ -32,7 +31,7 @@
 				<div class="deleteGalerie">Supprimer la galerie</div>
 			</div>
 		</div>
-		<!-- menu d'ajout de travaux-->
+		<!-- menu add travaux-->
 		<div id="panelAddingWork" class="hidden">
 
 			<div class="controles">
@@ -43,7 +42,7 @@
 			</div>
 
 			<h2>Ajout photo</h2>
-			<!-- Formulaire d'ajout de travaux -->
+			<!-- Formulaire ajout travaux -->
 			<form id="addingWorkForm">
 				
 				<div class="addImagePlaceholder">
@@ -152,8 +151,8 @@
 		</nav>
 	</footer>
 	
-	<script type="module" src="./javascript/script.js"></script>
-	<script type="module" src="./javascript/addition.js"></script>
+	<script type="module" src="./assets/javascript/script.js"></script>
+	<script type="module" src="./assets/javascript/addition.js"></script>
 	
 </body>
 </html>
