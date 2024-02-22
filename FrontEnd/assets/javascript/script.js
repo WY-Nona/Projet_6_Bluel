@@ -1,4 +1,5 @@
 import {gallery, filtersElement} from './constants.js';
+import { fetchWorksData, fetchCategoriesData} from './api.js';
 
 
 fetch("http://localhost:5678/api/works")
@@ -28,30 +29,6 @@ function displayWorkCards(works) {
     figure.appendChild(image);  // Génération de la balise img à la figre
     figure.appendChild(figcaption);   // Génération de la balise figcaption à la figure
   }) 
-}
-
-// Appel les données des travaux
-export async function fetchWorksData() {
-  try {
-      const url = 'http://localhost:5678/api/works';
-      const response = await fetch(url);
-
-      return await response.json();
-  } catch (error) {
-      console.log('===> error', error);
-  }
-}
-
-//Appel les catégories liés aux travaux
-export async function fetchCategoriesData() {
-  try {
-      const url = 'http://localhost:5678/api/categories';
-      const response = await fetch(url);
-
-      return await response.json();
-  } catch (error) {
-      console.log('===> error', error);
-  }
 }
 
 // Génere les filtres en fonction de leurs categories au chargement
