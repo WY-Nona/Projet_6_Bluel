@@ -13,9 +13,9 @@ function displayWorkCards(works) {
   
   return works.map(work => {
     //Déclaration div à generer dans le html
-    let figure = document.createElement('figure');   // Déclaration d'une figure
-    let image = document.createElement('img');   // Déclaration d'une balise img 
-    let figcaption = document.createElement('figcaption');  // Déclaration d'une balise figcaption
+    let figure = document.createElement('figure');   // Déclaration figure
+    let image = document.createElement('img');   // Déclaration balise img 
+    let figcaption = document.createElement('figcaption');  // Déclaration balise figcaption
 
     // Ajout
     figure.setAttribute('id',"project-" + work.id);   // Ajout de l'id de l'API work à la balise figure
@@ -31,9 +31,9 @@ function displayWorkCards(works) {
   }) 
 }
 
-// Génere les filtres en fonction de leurs categories au chargement
+// Géneration filtres selon leurs categories au chargement
   function displayWorkFilters(categories, parent) {
-  // Pour chaque catégorie, créer un élément HTML de type div pour représenter le filtre
+  // Pour chaque catégorie, créer élément HTML type div pour représenter filtre
     return categories.map(category => {
       const div = document.createElement('div');
       div.setAttribute('id', category.id);
@@ -56,16 +56,16 @@ function displayWorkCards(works) {
     displayWorkCards(works);
     displayWorkFilters(categories, filtersElement);
 
-    // Ajoute un écouteur d'événements de clic à chaque bouton de filtre
+    // Ajoute un event listener de clic à chaque bouton de filtre
     const filterButtons = document.querySelectorAll('.filter-button');
     for (let btn of filterButtons) {
       btn.addEventListener('click', function(e) {
-        // Ajoute la classe "selection" au filtre sélectionné et la retire des autres filtres
+        // Ajout classe "selection" au filtre sélectionné et la retire des autres filtres
         for (let btn of filterButtons) {
           btn.classList.toggle('selection', btn === e.target);
         }
 
-        // Filtre les données des travaux en fonction de la catégorie sélectionnée et affiche les cartes de travail filtrées
+        // Filtre les données des travaux selon la catégorie sélectionnée & affiche cartes filtrées
         const data = (e.target.id === 'all') ? works : works.filter(work => work.categoryId == e.target.id);
         displayWorkCards(data);
       });
