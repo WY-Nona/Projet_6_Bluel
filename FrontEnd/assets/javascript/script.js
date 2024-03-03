@@ -1,5 +1,6 @@
 import {gallery, filtersElement} from './constants.js';
-import { fetchWorksData, fetchCategoriesData} from './api.js';
+import {fetchWorksData, fetchCategoriesData} from './api.js';
+import { tokenLogin } from './connect.js';
 
 
 fetch("http://localhost:5678/api/works")
@@ -47,7 +48,7 @@ function displayWorkCards(works) {
 // Gére principalement les filtres, l'affichage des travaux et modifie le style lors du clic
   export async function main() {
     // Vérifie si connecté
-    // tokenLogin();
+    tokenLogin();
 
     // Récupére les données des travaux et des catégories depuis le serveur, et afficher les cartes de travail et les filtres
     const works = await fetchWorksData();

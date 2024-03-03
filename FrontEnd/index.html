@@ -10,8 +10,12 @@
 	
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
+	<script type="module" src="./assets/javascript/script.js"></script>
+	<script type="module" src="./assets/javascript/addition.js"></script>
 </head>
+
 <body>
+	<!--VERSION LOGGED IN-->
 	<!-- Gestion des 2 menus suppression&ajout travaux -->
 	<div id="pannelConnection" class="disconnected_and_hidden">
 		<div class="open-edit edition">
@@ -23,76 +27,65 @@
 	<div id="pannelEditWork" class="hidden">
 		<!-- Affichage Galerie miniaturisée pour supp/add travaux -->
 		<div id="galeriEditWork">
-			<div class="cross"><i class="fa-solid fa-xmark"></i></div>
+			<div class="cross">
+			<i class="fa-solid fa-xmark"></i>
+			</div>
 			<h2>Galerie photo</h2>
-			<div class="galerieEdit"></div>
+			<div class="galerieEdit">
+			</div>
 			<div class="bottomEdit">
-				<div class="addImg">Ajouter une photo</div>
-				<div class="deleteGalerie">Supprimer la galerie</div>
+				<div class="addImg">Ajouter une photo
+				</div>
+				<div class="deleteGalerie">Supprimer la galerie
+				</div>
 			</div>
 		</div>
 		<!-- menu add travaux-->
 		<div id="panelAddingWork" class="hidden">
-
 			<div class="controles">
-
-				<div class="return"><i class="fa-solid fa-arrow-left"></i></div>
-				<div class="cross cross2"><i class="fa-solid fa-xmark"></i></div>
-
+				<div class="return">
+					<i class="fa-solid fa-arrow-left"></i>
+				</div>
+				<div class="cross cross2">
+					<i class="fa-solid fa-xmark"></i>
+				</div>
 			</div>
-
 			<h2>Ajout photo</h2>
 			<!-- Formulaire ajout travaux -->
-			<form id="addingWorkForm">
-				
+			<form id="addingWorkForm">				
 				<div class="addImagePlaceholder">
-
 					<div class="imgPlace">
-
-						<img id="ImgPreview">
-						
-						<div class="form-img">
-							
+						<img id="ImgPreview">						
+						<div class="form-img">							
 							<i id="ImgIcon" class="fa-regular fa-image"></i>
 							<input  type="file" accept="images/*" id="ImputImg" name="ImputImg"/>
 							<label id="textImputLabel" for="ImputImg">+ Ajouter photo</label>
 							<span id="imgPrerequire">jpg, png: 4mo max</span>
 						</div>
-
 					</div>
-
 				</div>
-
 				<div class="titreForm">
-
 					<label for="title">Titre</label>
 					<input type="text" id="title">
-
 				</div>
-
 				<div class="categoriesForm">
-
 					<label for="category">Catégorie</label>
 					<select id="category" name="category">
-
 						<option value="0" selected></option>
 						<option value="1">Objet</option>
 						<option value="2">Appartement</option>
 						<option value="3">Hôtel & restaurant</option>
-
 					</select>
-
 				</div>
-
 				<div class="separation">
-
 					<button id="btn-AddWork" type="submit">Valider</button>
 					<p class="invalid-form"></p>
-
 				</div>
 			</form>
 		</div>
 	</div>
+
+
 	<header>
 		<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 		<nav>
@@ -124,7 +117,8 @@
 				<span>Modifier</span>
 			</div>
 			</div>
-			<div class=" filters">
+			<!--Classe "hidden" retirée pour l'instant pour laisser l'apparition des filtres. -->
+			<div class="filters">
 				<div id="all" class="filtre filter-button selection"><h3>Tous</h3></div>
 			</div>
 			<div class="gallery gallery_disconnected"></div>
@@ -150,9 +144,5 @@
 			</ul>
 		</nav>
 	</footer>
-	
-	<script type="module" src="./assets/javascript/script.js"></script>
-	<script type="module" src="./assets/javascript/addition.js"></script>
-	
 </body>
 </html>

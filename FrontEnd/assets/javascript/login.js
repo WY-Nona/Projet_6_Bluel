@@ -2,8 +2,8 @@ import { connectionForm, usernameInput, passwordInput, token , errorMessage} fro
 import { postLogin } from "./api.js";
 
 // {
-//     email: sophie.bluel@gmail.com
-//     mdp: "SophieBluel"
+//     email: sophie.bluel@test.tld
+//     mdp: "S0phie"
 // }
 
 function login() {
