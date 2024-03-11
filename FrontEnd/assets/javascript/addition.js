@@ -1,11 +1,11 @@
-import { token } from './constants.js';
+import { token, btnAddWork, galerieEdit, imgPreview, edditionGaleriePanel, panelAddingWork, form, formImg } from './constants.js';
 import { apiWork } from './script.js';
 
 const inputFile = document.getElementById("ImputImg");
 const inputTitle = document.getElementById("title");
 const inputSelect = document.getElementById("category");
 const invalidForm = document.querySelector(".invalid-form");
-const btnAddWork = document.getElementById("btn-AddWork")
+//const btnAddWork = document.getElementById("btn-AddWork")
 
 
 export function addingWork() {

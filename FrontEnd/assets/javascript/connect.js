@@ -1,6 +1,7 @@
 import { modalTop, loginLink, projectChange, hideFilter, upGalleryStyle, openEditPanel } from './constants.js';
 import { exitPanelCross, returnBtn, exitPanelCross2, deleteAllWorksButton, AddImageButton , btnSendImage, token } from './constants.js';
-
+import { openPanel, closePanel, displayWorksInPanel, openAddingPanel, returnBtnPanel, previewImage, generatedBtn } from './edit.js' ;
+import { deleteAllWorks } from './suppression.js' ;
 
 //// Gère le menu si connecté //// 
 function connected() {
@@ -22,7 +23,7 @@ function disconnected() {
   hideFilter.classList.replace('hidden', 'visible');
 }
 
-//Se déconnecte
+//Déconnexion
 function logout() {
   function handleLogOut(event) {
     event.preventDefault();
@@ -34,24 +35,17 @@ function logout() {
   
 }
 
-// Gére les fonctions si connecté 
+// Gére fonctions si connexion 
 export function tokenLogin() {
  // Si connecté
       if (token != null) {
-        // Change la visibilité de la page après la connexion
+        // Change visibilité de la page après la connexion
         connected();
         console.log("Connecté");
   
         // Gère la déconnexion
         logout();
-        
-        // Ouvre et ferme la fenêtre de modification des travaux
-        openEditPanel.addEventListener('click', openPanel);
-        projectChange.addEventListener('click', openPanel);
-        exitPanelCross.addEventListener('click', closePanel);
-        exitPanelCross2.addEventListener('click', closePanel);
-        returnBtn.addEventListener('click', returnBtnPanel);
-  
+
         // Affiche les travaux
         displayWorksInPanel();
       
@@ -68,3 +62,10 @@ export function tokenLogin() {
         disconnected();
       }
 }
+
+        // Ouvre et ferme la fenêtre de modification des travaux
+        openEditPanel.addEventListener('click', openPanel);
+        projectChange.addEventListener('click', openPanel);
+        exitPanelCross.addEventListener('click', closePanel);
+        exitPanelCross2.addEventListener('click', closePanel);
+        returnBtn.addEventListener('click', returnBtnPanel);

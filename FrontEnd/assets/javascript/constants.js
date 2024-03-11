@@ -22,7 +22,6 @@
         export const passwordInput = document.querySelector('#password');
         export const errorMessage = document.querySelector('#error-message');
         
-
     // Bouton de retour de la modale
         export const returnBtn = document.querySelector('.return');
  
@@ -34,18 +33,18 @@
         export const projectChange = document.querySelector('.change_projets');
 
     // Ouvre la fenêtre des travaux
-    export const openEditPanel = document.querySelector('.open-edit');
-    export const panelEditWork = document.querySelector('#pannelEditWork');
+        export const openEditPanel = document.querySelector('.open-edit');
+        export const panelEditWork = document.querySelector('#pannelEditWork');
 
     // Affiche les travaux
-    export const galerieEdit = document.querySelector('.galerieEdit');
+        export const galerieEdit = document.querySelector('.galerieEdit');
 
     // Ferme la fenetre
-    export const exitPanelCross = document.querySelector('.cross');
-    export const exitPanelCross2 = document.querySelector('.cross2');
+        export const exitPanelCross = document.querySelector('.cross');
+        export const exitPanelCross2 = document.querySelector('.cross2');
 
     // Suppresion
-    export const deleteAllWorksButton = document.querySelector('.deleteGalerie');
+        export const deleteAllWorksButton = document.querySelector('.deleteGalerie');
 
     // Ajout 
         export const AddImageButton = document.querySelector('.addImg');

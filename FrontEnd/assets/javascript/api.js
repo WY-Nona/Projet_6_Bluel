@@ -1,4 +1,5 @@
 // Appels d'API
+import {token, errorMessage } from './constants.js';
 
 // Appel les données des travaux
 export async function fetchWorksData() {
@@ -43,5 +44,26 @@ export async function postLogin(data) {
         
         console.log('===> error', error);
         throw new Error("Identifiant ou mot de passe incorrect")
+    }
+}
+
+// Supprime les données
+export async function deleteWork(workId) {
+    try {
+        // const token = localStorage.getItem('token');
+        const url = `http://localhost:5678/api/works/${workId}`;
+        const response = await fetch(url, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        if (!response.ok) {
+            throw new Error('La suppression a échoué');
+        }
+        console.log('La carte a été supprimée avec succès');
+    } catch (error) {
+        console.log('===> error', error);
+        throw new Error("Erreur dans la suppresion")
     }
 }

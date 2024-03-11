@@ -1,6 +1,7 @@
 import {gallery, filtersElement} from './constants.js';
 import {fetchWorksData, fetchCategoriesData} from './api.js';
 import { tokenLogin } from './connect.js';
+import { displayWorksInPanel } from './edit.js';
 
 
 fetch("http://localhost:5678/api/works")
@@ -45,19 +46,20 @@ function displayWorkCards(works) {
   }
 
 
-// Gére principalement les filtres, l'affichage des travaux et modifie le style lors du clic
+// Gére filtres/affichage travaux + modifie style lors du clic
   export async function main() {
     // Vérifie si connecté
     tokenLogin();
 
-    // Récupére les données des travaux et des catégories depuis le serveur, et afficher les cartes de travail et les filtres
+    // Récup les données des travaux et des catégories depuis le serveur
+    // et affiche les cartes de travail et les filtres.
     const works = await fetchWorksData();
     const categories = await fetchCategoriesData();
     console.log(works);
     displayWorkCards(works);
     displayWorkFilters(categories, filtersElement);
 
-    // Ajoute un event listener de clic à chaque bouton de filtre
+    // Ajoute un event listener de clic sur les filtres
     const filterButtons = document.querySelectorAll('.filter-button');
     for (let btn of filterButtons) {
       btn.addEventListener('click', function(e) {
