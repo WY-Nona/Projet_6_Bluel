@@ -95,6 +95,8 @@ body {
 }
 
 .cross {
+	width: 20px;
+	height: 20px;
 	position: absolute;
 	right: 30px;
 	top: 20px;
