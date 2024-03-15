@@ -14,7 +14,7 @@ function connected() {
   hideFilter.classList.replace('visible', 'hidden');
   upGalleryStyle.classList.replace('gallery_disconnected', 'gallery_connected');
 
-  //Affiche un lien de déconnexion
+  //Affiche le logout à la place du login
   loginLink.classList.replace('loginLink', 'logoutLink'),
   loginLink.innerHTML = '<a class="btn_deconnexion" href="#">logout</a>';
 }

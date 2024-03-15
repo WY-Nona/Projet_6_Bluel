@@ -50,7 +50,7 @@ export async function postLogin(data) {
 // Supprime les données
 export async function deleteWork(workId) {
     try {
-        // const token = localStorage.getItem('token');
+        const token = localStorage.getItem('token');
         const url = `http://localhost:5678/api/works/${workId}`;
         const response = await fetch(url, {
             method: 'DELETE',
@@ -64,6 +64,6 @@ export async function deleteWork(workId) {
         console.log('La carte a été supprimée avec succès');
     } catch (error) {
         console.log('===> error', error);
-        throw new Error("Erreur dans la suppresion")
+        throw new Error("Erreur dans la suppression")
     }
 }
