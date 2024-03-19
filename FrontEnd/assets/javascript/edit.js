@@ -11,9 +11,7 @@ export function openPanel() {
 export function closePanel() {
     panelEditWork.classList.replace('visible', 'hidden');
     panelAddingWork.classList.replace('visible', 'hidden');
-    
-    edditionGaleriePanel.classList.remove('visible', 'hidden');
-    panelAddingWork.classList.remove('visible', 'hidden');
+
 }
 
 //Géneration des cartes 
