@@ -5,7 +5,6 @@ const inputFile = document.getElementById("ImputImg");
 const inputTitle = document.getElementById("title");
 const inputSelect = document.getElementById("category");
 const invalidForm = document.querySelector(".invalid-form");
-const btnAddWork = document.getElementById("btn-AddWork")
 
 
 export function addingWork() {
